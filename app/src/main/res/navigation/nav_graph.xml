@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/combineAll">
+
+    <fragment
+        android:id="@+id/combineAll"
+        android:name="com.example.coinmarketcap.ui.listingAll.ListingAll"
+        android:label="fragment_combine_all"
+        tools:layout="@layout/fragment_listing_all" >
+        <action
+            android:id="@+id/action_combineAll_to_cryptoInfo"
+            app:destination="@id/cryptoInfo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cryptoInfo"
+        android:name="com.example.coinmarketcap.ui.cryptoInfo.CryptoInfo"
+        android:label="crypto_info_fragment"
+        tools:layout="@layout/crypto_info_fragment" >
+        <action
+            android:id="@+id/action_cryptoInfo_to_urlWebView"
+            app:destination="@id/urlWebView" />
+    </fragment>
+    <fragment
+        android:id="@+id/urlWebView"
+        android:name="com.example.coinmarketcap.ui.cryptoWebView.CryptoWebView"
+        android:label="fragment_url_web_view"
+        tools:layout="@layout/fragment_url_web_view" />
+
+</navigation>
